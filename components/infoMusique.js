@@ -1,14 +1,14 @@
 import React from 'react'
-import {} from 'react-native'
+import { View } from 'react-native'
 
-export default function profile(){
+export default function infoMusqiue (){
     return(
         <View>
-            
+
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-
+    
 })
