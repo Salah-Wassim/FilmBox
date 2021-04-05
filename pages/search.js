@@ -1,13 +1,20 @@
 import React from 'react'
 import Styles from '../Styles'
-import { StyleSheet, TextInput, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 
-export default function Search (){
-     return(
-        <View>
-            
-        </View>
-     )
+export default class Search extends React.Component{
+
+   _loadMusique() {
+      
+   }
+
+   render(){
+      return(
+         <View>
+             
+         </View>
+      )
+   }
 }
 
 const styles = StyleSheet.create({

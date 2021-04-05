@@ -1,5 +1,6 @@
 import React from 'react'
-import {} from 'react-native'
+import Styles from '../Styles'
+import {StyleSheet, View} from 'react-native'
 
 export default function profile(){
     return(
