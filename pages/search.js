@@ -1,17 +1,34 @@
 import React from 'react'
 import Styles from '../Styles'
-import { StyleSheet, View } from 'react-native'
+import { FlatList, StyleSheet, TextInput, View, Button } from 'react-native'
+
+import { getFilmsFromApiWWithSearchedText } from '../api/Api'
 
 export default class Search extends React.Component{
 
-   _loadMusique() {
-      
+   constructor(props){
+      super(props)
+      this._films = []
+   }
+
+   _loadFilms() {
+      getFilmsFromApiWWithSearchedText("star").then(data => {
+         console.log(data.title)
+         //this._films = data.results
+         //this.forceUpdate()
+      })
    }
 
    render(){
       return(
          <View>
-             
+               <TextInput placeholder="Titre du film"/>
+               <Button title="rechercher" onPress={() => this._loadFilms()}/>
+               <FlatList
+                  data={this._films}
+                  keyExtractor={(item) => item.id.toString()}
+                  renderItem={({item}) => <FilmItem fim={item}/>}
+               />
          </View>
       )
    }
