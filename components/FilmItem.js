@@ -1,6 +1,8 @@
 import React from 'react'
 import {StyleSheet, View, Text, Image} from 'react-native'
 
+import {getImageFromApi} from '../api/Api'
+
 export default class FilmItem extends React.Component{
     render(){
         const film = this.props.film
@@ -8,7 +10,7 @@ export default class FilmItem extends React.Component{
             <View style={styles.main_container}>
                 <Image
                     style={styles.image}
-                    source={{uri: "image"}}
+                    source={{uri: getImageFromApi(film.backdrop_path)}}
                 />
                 <View style={styles.content_container}>
                     <View style={styles.header_container}>

@@ -13,7 +13,7 @@ export default class Search extends React.Component{
 
    _loadFilms() {
       getFilmsFromApiWWithSearchedText("star").then(data => {
-         //console.log(data)
+         console.log(data)
          this._films = data.results
          this.forceUpdate()
       })
