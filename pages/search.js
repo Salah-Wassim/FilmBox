@@ -1,12 +1,11 @@
 import React from 'react'
 import Styles from '../Styles'
 import FilmItem from '../components/FilmItem'
-import { FlatList, StyleSheet, TextInput, View, Button, Text } from 'react-native'
+import { FlatList, StyleSheet, TextInput, View, Button } from 'react-native'
 
 import { getFilmsFromApiWWithSearchedText } from '../api/Api'
 
 export default class Search extends React.Component{
-
    constructor(props){
       super(props)
       this._films = []
@@ -28,7 +27,7 @@ export default class Search extends React.Component{
                <FlatList
                   data={this._films}
                   keyExtractor={(item) => item.id.toString()}
-                  renderItem={({item}) => <Text>{item.title}</Text>}
+                  renderItem={({item}) => <FilmItem film={item}/>}
                />
          </View>
       )
