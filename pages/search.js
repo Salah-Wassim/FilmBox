@@ -9,19 +9,28 @@ export default class Search extends React.Component{
    constructor(props){
       super(props)
       this.state = { films: [] }
+      this.searchedText = "" 
    }
 
    _loadFilms() {
-      getFilmsFromApiWWithSearchedText("it").then(data => {
-         console.log(data)
-         this.setState({ films: data.results })
-      })
+      if (this.searchedText > 0) {
+         getFilmsFromApiWWithSearchedText(this.searchedText).then(data => {
+            console.log(data)
+            this.setState({ films: data.results })
+         })
+      }
+   }
+
+   _searchedTextInputChanged(text){
+      this.searchedText = text
    }
 
    render(){
       return(
          <View>
-               <TextInput placeholder="Titre du film"/>
+               <TextInput placeholder="Titre du film"
+                  onChangeText = {(text) => this._searchedTextInputChanged(text)}
+               />
                <Button title="rechercher" onPress={() => this._loadFilms()}/>
                <FlatList
                   data={this.state.films}
