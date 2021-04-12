@@ -8,14 +8,13 @@ import { getFilmsFromApiWWithSearchedText } from '../api/Api'
 export default class Search extends React.Component{
    constructor(props){
       super(props)
-      this._films = []
+      this.state = { films: [] }
    }
 
    _loadFilms() {
-      getFilmsFromApiWWithSearchedText("star").then(data => {
+      getFilmsFromApiWWithSearchedText("it").then(data => {
          console.log(data)
-         this._films = data.results
-         this.forceUpdate()
+         this.setState({ films: data.results })
       })
    }
 
@@ -25,7 +24,7 @@ export default class Search extends React.Component{
                <TextInput placeholder="Titre du film"/>
                <Button title="rechercher" onPress={() => this._loadFilms()}/>
                <FlatList
-                  data={this._films}
+                  data={this.state.films}
                   keyExtractor={(item) => item.id.toString()}
                   renderItem={({item}) => <FilmItem film={item}/>}
                />
