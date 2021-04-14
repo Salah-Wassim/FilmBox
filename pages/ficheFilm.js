@@ -1,25 +1,18 @@
 import React from 'react'
-import {Image, StyleSheet, View} from 'react-native'
-
-import FilmItem from '../components/FilmItem'
-import { getImageFromApi } from '../api/Api'
+import {Button, Image, StyleSheet, View, Text} from 'react-native'
 
 export default class ficheFilm extends React.Component {
+    
+    constructor(props){
+        super(props)
+        this.state = {
+        }
+    }
+
     render(){
-        const film = this.props.film
         return (
             <View>
-                <Image
-                    style={styles.image_fiche}
-                    source = {{uri: getImageFromApi(film.backdrop_path)}}
-                />
-                <Text style={styles.titre_fiche}>{film}</Text>
-                <View style={styles}>
-                    <View style={styles}>
-
-                    </View>
-                </View>
-
+                <Text>Bonjour</Text>
             </View>
         )
     }
