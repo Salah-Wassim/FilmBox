@@ -11,7 +11,7 @@ import {
     TouchableOpacity
 } from 'react-native'
 import {LinearGradient} from 'expo-linear-gradient'
-import {icon} from 'react-native-elements'
+//import {icon} from 'react-native-elements'
 
 export default function signIn() {
     
@@ -44,13 +44,13 @@ export default function signIn() {
                 <TouchableOpacity>
                     <Text style={styles.fpText}>Forgot Password</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity style={styles.loginButton}>
                     <Text style={styles.loginButtonText}>Login</Text>
                 </TouchableOpacity>
                 <View style={styles.signUpTextView}>
-                    <Text style={[styles.signUpText, {color: '#B53471' }]}>Don't have an account ?</Text>
+                    <Text style={styles.signUpText}>Don't have an account ?</Text>
                     <TouchableOpacity>
-                        <Text style={[styles.signUpText, {color: '#B53471' }]}>{'Sign Up'}</Text>
+                        <Text style={[styles.signUpText, {color: '#B53471' }]}>{' Sign Up '}</Text>
                     </TouchableOpacity>
                 </View>
             </LinearGradient>
@@ -93,6 +93,12 @@ const styles = StyleSheet.create({
         fontSize:18,
         fontWeight: '600',
         marginTop: 10,
+    },
+    loginButton: {
+        backgroundColor: '#833471',
+        paddingVertical: 12,
+        borderRadius: 6,
+        marginTop: 20,
     },
     loginButtonText: {
         fontSize: 20,
