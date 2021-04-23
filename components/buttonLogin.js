@@ -10,7 +10,7 @@ export default class buttonLogin extends React.Component{
     render(){
         return(
             <View>
-
+                
             </View>
         )
     }
