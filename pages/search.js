@@ -1,5 +1,4 @@
 import React from 'react'
-import Styles from '../Styles'
 import FilmItem from '../components/FilmItem'
 import { FlatList, StyleSheet, TextInput, View, Button, ActivityIndicator } from 'react-native'
 

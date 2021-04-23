@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react'
-import Styles from '../Styles'
 import {
     StyleSheet, 
     View, 
