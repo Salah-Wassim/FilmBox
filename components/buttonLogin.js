@@ -2,6 +2,11 @@ import React from 'react'
 import {StyleSheet, View} from 'react-native'
 
 export default class buttonLogin extends React.Component{
+
+    constructor(props){
+        super(props)
+    }
+
     render(){
         return(
             <View>
@@ -12,5 +17,5 @@ export default class buttonLogin extends React.Component{
 }
 
 const styles = StyleSheet.create({
-    
+
 })
