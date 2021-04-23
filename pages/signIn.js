@@ -20,7 +20,7 @@ export default function signIn() {
     
     return(
         <TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>
-            <LinearGradient colors={['#222', '#222', '#222',]} style={styles.container}>
+            <LinearGradient colors={['#223', '#222', '#222',]} style={styles.container}>
                 <Text style={styles.welcomeText}>Welcome Back !</Text>
                 <Text style={styles.loginText}>Login</Text>
                 <TextInput 
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: 50,
         paddingHorizontal: 20,
+        paddingBottom: 222,
     },
     welcomeText:{
         fontSize: 30,
