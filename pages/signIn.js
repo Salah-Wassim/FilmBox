@@ -12,49 +12,50 @@ import {
 import {LinearGradient} from 'expo-linear-gradient'
 //import {icon} from 'react-native-elements'
 
-export default function signIn() {
-    
-    useEffect(() => {
-        StatusBar.setBarStyle('light-content', true); 
-    }, [])
-    
-    return(
-        <TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>
-            <LinearGradient colors={['#223', '#222', '#222',]} style={styles.container}>
-                <Text style={styles.welcomeText}>Welcome Back !</Text>
-                <Text style={styles.loginText}>Login</Text>
-                <TextInput 
-                    placeholder='Email Adress'  
-                    placeholderTextColor='#808e9b'
-                    style={styles.input}
-                    autoCorrect={true}
-                    autoCapitalize={false}
-                    autoCompleteType='email'
-                    keyboardType='email-address'
-                    textContentType='emailAddress'
-                />
-                <TextInput
-                    placeholder='Password'
-                    placeholderTextColor='#808e9b'
-                    style={styles.input}
-                    secureTextEntry={true}
-                    textContentType='password'
-                />
-                <TouchableOpacity>
-                    <Text style={styles.fpText}>Forgot Password</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.loginButton}>
-                    <Text style={styles.loginButtonText}>Login</Text>
-                </TouchableOpacity>
-                <View style={styles.signUpTextView}>
-                    <Text style={styles.signUpText}>Don't have an account ?</Text>
+export default class signIn extends React.Component {
+
+    //useEffect(() => {
+    //    StatusBar.setBarStyle('light-content', true); 
+    //}, [])
+    render(){
+        return(
+            <TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>
+                <LinearGradient colors={['#223', '#222', '#222',]} style={styles.container}>
+                    <Text style={styles.welcomeText}>Welcome Back !</Text>
+                    <Text style={styles.loginText}>Login</Text>
+                    <TextInput 
+                        placeholder='Email Adress'  
+                        placeholderTextColor='#808e9b'
+                        style={styles.input}
+                        autoCorrect={true}
+                        autoCapitalize={false}
+                        autoCompleteType='email'
+                        keyboardType='email-address'
+                        textContentType='emailAddress'
+                    />
+                    <TextInput
+                        placeholder='Password'
+                        placeholderTextColor='#808e9b'
+                        style={styles.input}
+                        secureTextEntry={true}
+                        textContentType='password'
+                    />
                     <TouchableOpacity>
-                        <Text style={[styles.signUpText, {color: '#B53471' }]}>{' Sign Up '}</Text>
+                        <Text style={styles.fpText}>Forgot Password</Text>
                     </TouchableOpacity>
-                </View>
-            </LinearGradient>
-        </TouchableWithoutFeedback>
-    )
+                    <TouchableOpacity style={styles.loginButton}>
+                        <Text style={styles.loginButtonText} onPress={this.userSignIn}>Login</Text>
+                    </TouchableOpacity>
+                    <View style={styles.signUpTextView}>
+                        <Text style={styles.signUpText}>Don't have an account ?</Text>
+                        <TouchableOpacity>
+                            <Text style={[styles.signUpText, {color: '#B53471' }]}>{' Sign Up '}</Text>
+                        </TouchableOpacity>
+                    </View>
+                </LinearGradient>
+            </TouchableWithoutFeedback>
+        )
+    }
 }
 
 const styles = StyleSheet.create({
