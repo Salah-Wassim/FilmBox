@@ -60,7 +60,8 @@ export default class signIn extends React.Component {
                         autoCapitalize={false}
                         autoCompleteType='email'
                         keyboardType='email-address'
-                        textContentType='emailAddress'
+                        textContentType='emailAddress'onChangeText = {UserEmail => this.setState({UserEmail})}
+                        
                     />
                     <TextInput
                         placeholder='Password'
@@ -68,6 +69,7 @@ export default class signIn extends React.Component {
                         style={styles.input}
                         secureTextEntry={true}
                         textContentType='password'
+                        onChangeText = {UserPassword => this.setState({UserPassword})}
                     />
                     <TouchableOpacity>
                         <Text style={styles.fpText}>Forgot Password</Text>
