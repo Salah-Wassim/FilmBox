@@ -14,9 +14,38 @@ import {LinearGradient} from 'expo-linear-gradient'
 
 export default class signIn extends React.Component {
 
+    constructor(props){
+        super(props)
+        this.state = {
+            UserEmail: '',
+            UserPassword: '',
+        }
+    }
+
+    userSignIn = () => {
+        const {UserEmail} = this.state;
+        const {UserPassword} = this.state;
+
+        fetch('http://localhost/filmbox/signUpFormPhp/signInForm.php', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: UserEmail,
+                password: UserPassword
+            })
+        }).then((response) => response.json())
+                .then((responseJson) => {
+                    Alert.alert(responseJson);
+                }).catch((error) => console.log(error));
+    }
+
     //useEffect(() => {
     //    StatusBar.setBarStyle('light-content', true); 
     //}, [])
+
     render(){
         return(
             <TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>
