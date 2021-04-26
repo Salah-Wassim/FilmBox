@@ -14,7 +14,7 @@ export default function App() {
     {
       id: "1",
       title:"signIn",
-      component: <SignIn />
+      component: <SignIn actif={setIdPage}/>
     },
     {
       id: "2",
