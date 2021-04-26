@@ -10,6 +10,18 @@ import SignUp from './pages/registrationUser'
 export default function App() {
 
   const [idPage, setIdPage] = useState('1');
+  const pages = [
+    {
+      id: "1",
+      title:"signIn",
+      component: <SignIn />
+    },
+    {
+      id: "2",
+      title:"signUp",
+      component: <SignUp/>
+    },
+  ]
 
   return (
       <View style={styles.container}>
