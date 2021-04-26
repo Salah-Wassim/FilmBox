@@ -62,8 +62,8 @@ export default class signIn extends React.Component {
                         autoCapitalize={false}
                         autoCompleteType='email'
                         keyboardType='email-address'
-                        textContentType='emailAddress'onChangeText = {UserEmail => this.setState({UserEmail})}
-                        
+                        textContentType='emailAddress'
+                        onChangeText = {UserEmail => this.setState({UserEmail})}
                     />
                     <TextInput
                         placeholder='Password'

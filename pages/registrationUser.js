@@ -38,11 +38,11 @@ export default class registrationUser extends React.Component {
                 email: UserEmail,
                 password: UserPassword
             })
-        }).then((response) => response.json())
-        //Affichage du message de réponse provenant du serveur après l'insertion d'enregistrements.
-                .then((responseJson) => {
-                    Alert.alert(responseJson);
-                }).catch((error) => console.log(error));
+        })//.then((response) => response.json())
+        ////Affichage du message de réponse provenant du serveur après l'insertion d'enregistrements.
+          //      .then((responseJson) => {
+          //          Alert.alert(responseJson.message);
+          //      }).catch((error) => console.log(error));
     }
 
     render(){
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: 50,
         paddingHorizontal: 20,
-        paddingBottom: 222,
+        paddingBottom: 259,
     },
     titleText: {
         fontSize: 30,
