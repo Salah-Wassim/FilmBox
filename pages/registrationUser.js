@@ -75,7 +75,7 @@ export default class registrationUser extends React.Component {
                         onChangeText={UserPassword => this.setState({UserPassword})}
                     />
                     <TouchableOpacity style={styles.signUpButton}>
-                        <Text style={styles.signUpButtonTextRegistration} onPress={this.userRegistration}>Login</Text>
+                        <Text style={styles.signUpButtonTextRegistration} onPress={this.userRegistration}>SignUp</Text>
                     </TouchableOpacity>
                 </linearGradient>
             </TouchableWithoutFeedback>
