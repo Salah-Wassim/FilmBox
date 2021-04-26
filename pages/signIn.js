@@ -2,7 +2,8 @@ import React, {useEffect} from 'react'
 import {
     StyleSheet, 
     View, 
-    Text, 
+    Text,
+    Alert, 
     TextInput, 
     StatusBar, 
     Keyboard, 
