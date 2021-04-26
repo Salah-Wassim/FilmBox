@@ -28,6 +28,7 @@ export default class signIn extends React.Component {
 
         fetch('http://localhost/filmbox/signUpFormPhp/signInForm.php', {
             method: 'POST',
+            mode: 'no-cors',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
