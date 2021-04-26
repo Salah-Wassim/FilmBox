@@ -8,6 +8,7 @@ import {
     TouchableWithoutFeedback,
     TouchableOpacity
 } from 'react-native'
+import {LinearGradient} from 'expo-linear-gradient'
 
 export default class registrationUser extends React.Component {
     
@@ -38,6 +39,7 @@ export default class registrationUser extends React.Component {
                 password: UserPassword
             })
         }).then((response) => response.json())
+        //Affichage du message de réponse provenant du serveur après l'insertion d'enregistrements.
                 .then((responseJson) => {
                     Alert.alert(responseJson);
                 }).catch((error) => console.log(error));
@@ -46,7 +48,7 @@ export default class registrationUser extends React.Component {
     render(){
         return(
             <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-                <linearGradient colors={['#223', '#222', '#222']} style={styles.containerRegistration}>
+                <LinearGradient colors={['#223', '#222', '#222']} style={styles.containerRegistration}>
                     <Text style={styles.titleText}>Welcome !</Text>
                     <Text style={styles.signUpText}>SignUp</Text>
                     <TextInput 
@@ -78,7 +80,7 @@ export default class registrationUser extends React.Component {
                     <TouchableOpacity style={styles.signUpButton}>
                         <Text style={styles.signUpButtonTextRegistration} onPress={this.userRegistration}>SignUp</Text>
                     </TouchableOpacity>
-                </linearGradient>
+                </LinearGradient>
             </TouchableWithoutFeedback>
         )
     }

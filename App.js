@@ -5,12 +5,13 @@ import Search from './pages/search'
 import SignIn from './pages/signIn'
 import Profile from './pages/profile'
 import Home from './pages/home'
+import SignUp from './pages/registrationUser'
 
 export default function App() {
 
   return (
       <View style={styles.container}>
-        <SignIn/>
+        <SignUp/>
       </View>
     );
 }
