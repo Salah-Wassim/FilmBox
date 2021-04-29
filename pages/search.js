@@ -19,10 +19,15 @@ export default class Search extends React.Component{
    _loadFilms() {
       if (this.searchedText.length > 0) {
          this.setState({isLoading: true}) // Lancement du chargement
-         getFilmsFromApiWWithSearchedText(this.searchedText).then(data => {
-            console.log(data)
-            this.setState({isLoading: false}) // Fin du chargement
-            this.setState({ films: data.results })
+         getFilmsFromApiWWithSearchedText(this.searchedText, this.page+1).then(data => {
+            this.page = data.page
+            this.totalPages = data.total_pages
+            this.state({
+               films: [ ...this.state.films, ...data.results ],
+               isLoading: false
+            })
+            //this.setState({isLoading: false}) // Fin du chargement
+            //this.setState({ films: data.results })
          })
       }
    }
