@@ -22,7 +22,7 @@ export default class Search extends React.Component{
          getFilmsFromApiWWithSearchedText(this.searchedText, this.page+1).then(data => {
             this.page = data.page
             this.totalPages = data.total_pages
-            this.state({
+            this.setState({
                films: [ ...this.state.films, ...data.results ],
                isLoading: false
             })
@@ -58,6 +58,12 @@ export default class Search extends React.Component{
                   data={this.state.films}
                   keyExtractor={(item) => item.id.toString()}
                   renderItem={({item}) => <FilmItem film={item}/>}
+                  onEndReachedThreshold={0.5}
+                  onEndReached={() => {
+                     if(this.page < this.totalPages){
+                        this._loadFilms()
+                     }
+                  }}
                />
                {this._displayLoading()}
          </View>
