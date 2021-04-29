@@ -36,9 +36,10 @@ export default class Search extends React.Component{
       this.page = 0
       this.totalPages = 0
       this.setState({
-         films: []
+         films: [],
+      }, () => {
+         this._loadFilms() 
       })
-      this._loadFilms() 
    }
 
    _searchedTextInputChanged(text){
