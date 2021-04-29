@@ -7,7 +7,9 @@ import { getFilmsFromApiWWithSearchedText } from '../api/Api'
 export default class Search extends React.Component{
    constructor(props){
       super(props)
-      this.searchedText = "" 
+      this.searchedText = ""
+      this.page = 0 // Compteur pour connaitre la page courante
+      this.totalPages = 0 //Nombre de pages totales pour savoir si on a atteint la fin 
       this.state = { 
          films: [],
          isLoading: false, 
