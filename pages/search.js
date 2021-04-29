@@ -55,7 +55,7 @@ export default class Search extends React.Component{
          <View>
                <TextInput placeholder="Titre du film"
                   onChangeText = {(text) => this._searchedTextInputChanged(text)}
-                  onSubmitEditing = {() => this._loadFilms()}
+                  onSubmitEditing = {() => this._searchFilms()}
                />
                <Button title="rechercher" onPress={() => this._loadFilms()}/>
                <FlatList
