@@ -32,8 +32,13 @@ export default class Search extends React.Component{
       }
    }
 
-   _searchFilms(){
-      this._loadFilms() // Remettre à zéro les films du state
+   _searchFilms(){ // Remettre à zéro les films du state
+      this.page = 0
+      this.totalPages = 0
+      this.setState({
+         films: []
+      })
+      this._loadFilms() 
    }
 
    _searchedTextInputChanged(text){
