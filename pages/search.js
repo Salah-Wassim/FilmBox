@@ -58,6 +58,9 @@ export default class Search extends React.Component{
    }
 }
 
+// Quand je clique sur le film il faut que je récupèle l' id du film pour ensuite récupérer
+//les info correspondantes => https://developers.themoviedb.org/3/movies/get-movie-details
+
 const styles = StyleSheet.create({
    loading_container: {
       position:'absolute',

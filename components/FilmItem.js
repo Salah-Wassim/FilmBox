@@ -1,5 +1,5 @@
 import React from 'react'
-import {StyleSheet, View, Text, Image} from 'react-native'
+import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native'
 
 import {getImageFromApi} from '../api/Api'
 
@@ -7,7 +7,7 @@ export default class FilmItem extends React.Component{
     render(){
         const film = this.props.film
         return(
-            <View style={styles.main_container}>
+            <TouchableOpacity style={styles.main_container}>
                 <Image
                     style={styles.image}
                     source={{uri: getImageFromApi(film.backdrop_path)}}
@@ -18,7 +18,7 @@ export default class FilmItem extends React.Component{
                         <Text style={styles.vote_text}>{film.vote_average}</Text>
                     </View>
                 </View>
-            </View>
+            </TouchableOpacity>
         )
     }
 }

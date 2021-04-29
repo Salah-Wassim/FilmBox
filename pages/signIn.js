@@ -49,6 +49,7 @@ export default class signIn extends React.Component {
     //}, [])
 
     render(){
+        const actif = this.props.actif
         return(
             <TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>
                 <LinearGradient colors={['#223', '#222', '#222',]} style={styles.container}>
@@ -82,7 +83,7 @@ export default class signIn extends React.Component {
                     <View style={styles.signUpTextView}>
                         <Text style={styles.signUpText}>Don't have an account ?</Text>
                         <TouchableOpacity>
-                            <Text style={[styles.signUpText, {color: '#B53471' }]}>{' Sign Up '}</Text>
+                            <Text style={[styles.signUpText, {color: '#B53471' }]}> Sign Up</Text>
                         </TouchableOpacity>
                     </View>
                 </LinearGradient>

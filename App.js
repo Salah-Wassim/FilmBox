@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import Search from './pages/search'
 import SignIn from './pages/signIn'
@@ -25,7 +25,7 @@ export default function App() {
 
   return (
       <View style={styles.container}>
-        <SignUp/>
+        <Search/>
       </View>
     );
 }
