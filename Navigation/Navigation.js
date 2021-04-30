@@ -1,4 +1,3 @@
-import {createStackNavigator} from 'react-navigation-stack'
 import {createStackNavigator, createAppContainer} from "react-navigation-stack"
 
 import Search from '../pages/search'
