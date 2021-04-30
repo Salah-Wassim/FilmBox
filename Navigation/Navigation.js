@@ -1,6 +1,7 @@
-import {createAppContainer} from 'react-navigation'
 import {createStackNavigator} from 'react-navigation-stack'
+import {createStackNavigator, createAppContainer} from "react-navigation-stack"
 import {StyleSheet, View} from 'react-native'
+
 import Search from '../pages/search'
 
 const SearchStackNavigator = createStackNavigator({
@@ -11,3 +12,5 @@ const SearchStackNavigator = createStackNavigator({
         }
     }
 })
+
+export default createAppContainer(SearchStackNavigator)

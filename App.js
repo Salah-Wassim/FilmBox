@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import {createAppContainer, createStackNavigator} from "react-navigation-stack"
+
 
 import Search from './pages/search'
 import SignIn from './pages/signIn'
