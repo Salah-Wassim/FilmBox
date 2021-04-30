@@ -7,14 +7,16 @@ import SignIn from './pages/signIn'
 import Profile from './pages/profile'
 import Home from './pages/home'
 import SignUp from './pages/registrationUser'
+import { render } from 'react-dom';
 
-export default function App() {
-
-  return (
+export default class App extends React.Component {
+  render(){
+    return (
       <View style={styles.container}>
         <Search/>
       </View>
     );
+  }
 }
 
 const styles = StyleSheet.create({
