@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, View } from 'react-native';
-
+import Navigation from './Navigation/Navigation'
 
 import Search from './pages/search'
 import SignIn from './pages/signIn'
@@ -13,7 +13,7 @@ export default class App extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-        <Search/>
+        <Navigation/>
       </View>
     );
   }
