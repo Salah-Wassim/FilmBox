@@ -1,17 +1,19 @@
 import React from 'react'
-import {Button, Image, StyleSheet, View, Text} from 'react-native'
+import {StyleSheet, View, Text} from 'react-native'
 
 export default class ficheFilm extends React.Component {
 
     render(){
         return (
-            <View>
-                <Text>Bonjour</Text>
+            <View style={styles.main_container}>
+                <Text>Détail du film</Text>
             </View>
         )
     }
 }
 
 const styles = StyleSheet.create({
-
+    main_container: {
+        flex: 1,
+    }
 })
