@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width:120,
-        haight: 180,
+        height: 180,
         margin: 5,
         backgroundColor: 'gray',
     },
