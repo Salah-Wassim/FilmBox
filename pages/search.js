@@ -56,6 +56,10 @@ export default class Search extends React.Component{
       }
    }
 
+   _displayFicheFilm = (idFilm) => {
+      console.log("id du film : " + idFilm)
+   }
+
    render(){
       return(
          <View>
