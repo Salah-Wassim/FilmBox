@@ -7,7 +7,7 @@ export default class FilmItem extends React.Component{
     render(){
         const {film, displayFicheFilm} = this.props
         return(
-            <TouchableOpacity style={styles.main_container}>
+            <TouchableOpacity style={styles.main_container} onPress={() => {displayFicheFilm(film.id)}}>
                 <Image
                     style={styles.image}
                     source={{uri: getImageFromApi(film.backdrop_path)}}
