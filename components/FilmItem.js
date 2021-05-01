@@ -5,7 +5,7 @@ import {getImageFromApi} from '../api/Api'
 
 export default class FilmItem extends React.Component{
     render(){
-        const film = this.props.film
+        const {film, displayFicheFilm} = this.props
         return(
             <TouchableOpacity style={styles.main_container}>
                 <Image
