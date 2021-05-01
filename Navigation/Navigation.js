@@ -9,6 +9,9 @@ const SearchStackNavigator = createStackNavigator({
         navigationOptions: {
             title: 'Search'
         }
+    },
+    FilmDetail: {
+        screen: filmDetail
     }
 })
 
