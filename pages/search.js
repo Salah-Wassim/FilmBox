@@ -56,12 +56,13 @@ export default class Search extends React.Component{
       }
    }
 
-   _displayDetailFilm = (idFilm) => {
-      console.log("id du film : " + idFilm)
-      this.props.navigation.navigate('ficheFilm')
+   _displayDetailFilm = (id) => {
+      console.log("Display film with id " + id)
+      this.props.navigation.navigate('FicheFilm', {id: id})
    }
 
    render(){
+      //console.log(this.props)
       return(
          <View>
                <TextInput placeholder="Titre du film"
