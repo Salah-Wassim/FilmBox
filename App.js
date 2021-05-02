@@ -6,7 +6,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Search from './pages/search'
 import ficheFilm from'./'
 import Test from './components/test'
-
+import SignIn from './pages/signIn'
+import SignUp from './pages/registrationUser'
+import Home from './pages/home'
+import Profile from './pages/profile'
+import FicheFilm from './components/ficheFilm'
 
 
 export default function App () {
