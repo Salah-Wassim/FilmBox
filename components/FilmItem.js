@@ -5,9 +5,9 @@ import {getImageFromApi} from '../api/Api'
 
 export default class FilmItem extends React.Component{
     render(){
-        const {film, displayFicheFilm} = this.props
+        const {film, displayDetailFilm} = this.props
         return(
-            <TouchableOpacity style={styles.main_container} onPress={() => {displayFicheFilm(film.id)}}>
+            <TouchableOpacity style={styles.main_container} onPress={() => displayDetailFilm(film.id)}>
                 <Image
                     style={styles.image}
                     source={{uri: getImageFromApi(film.backdrop_path)}}
@@ -22,6 +22,7 @@ export default class FilmItem extends React.Component{
         )
     }
 }
+
 const styles = StyleSheet.create({
     main_container: {
         height: 190,

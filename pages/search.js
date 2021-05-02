@@ -8,8 +8,8 @@ export default class Search extends React.Component{
    constructor(props){
       super(props)
       this.searchedText = ""
-      //this.page = 0 // Compteur pour connaitre la page courante
-      //this.totalPages = 0 //Nombre de pages totales pour savoir si on a atteint la fin 
+      this.page = 0 // Compteur pour connaitre la page courante
+      this.totalPages = 0 //Nombre de pages totales pour savoir si on a atteint la fin 
       this.state = { 
          films: [],
          isLoading: false, 
@@ -19,28 +19,28 @@ export default class Search extends React.Component{
    _loadFilms() {
       if (this.searchedText.length > 0) {
          this.setState({isLoading: true}) // Lancement du chargement
-         getFilmsFromApiWWithSearchedText(this.searchedText).then(data => { //this.page+1
-            //this.page = data.page
-            //this.totalPages = data.total_pages
-            //this.setState({
-            //   films: [ ...this.state.films, ...data.results ],
-            //   isLoading: false
-            //})
-            this.setState({isLoading: false}) // Fin du chargement
-            this.setState({ films: data.results })
+         getFilmsFromApiWWithSearchedText(this.searchedText, this.page+1).then(data => { //this.page+1
+            this.page = data.page
+            this.totalPages = data.total_pages
+            this.setState({
+               films: [ ...this.state.films, ...data.results ],
+               isLoading: false
+            })
+            //this.setState({isLoading: false}) // Fin du chargement
+            //this.setState({ films: data.results })
          })
       }
    }
 
-   //_searchFilms(){ // Remettre à zéro les films du state
-   //   this.page = 0
-   //   this.totalPages = 0
-   //   this.setState({
-   //      films: [],
-   //   }, () => {
-   //      this._loadFilms() 
-   //   })
-   //}
+   _searchFilms(){ // Remettre à zéro les films du state
+      this.page = 0
+      this.totalPages = 0
+      this.setState({
+         films: [],
+      }, () => {
+         this._loadFilms() 
+      })
+   }
 
    _searchedTextInputChanged(text){
       this.searchedText = text
@@ -56,8 +56,9 @@ export default class Search extends React.Component{
       }
    }
 
-   _displayFicheFilm = (idFilm) => {
+   _displayDetailFilm = (idFilm) => {
       console.log("id du film : " + idFilm)
+      this.props.navigation.navigate('ficheFilm')
    }
 
    render(){
@@ -65,13 +66,13 @@ export default class Search extends React.Component{
          <View>
                <TextInput placeholder="Titre du film"
                   onChangeText = {(text) => this._searchedTextInputChanged(text)}
-                  onSubmitEditing = {() => this._loadFilms()}
+                  onSubmitEditing = {() => this._searchFilms()}
                />
                <Button title="rechercher" onPress={() => this._loadFilms()}/>
                <FlatList
                   data={this.state.films}
                   keyExtractor={(item) => item.id.toString()}
-                  renderItem={({item}) => <FilmItem film={item} displayFicheFil={this._displayFicheFilm}/>}
+                  renderItem={({item}) => <FilmItem film={item} displayDetailFilm={this._displayDetailFilm}/>}
                   onEndReachedThreshold={0.5}
                   onEndReached={() => {
                      if(this.page < this.totalPages){
