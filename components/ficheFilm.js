@@ -11,6 +11,15 @@ export default class ficheFilm extends React.Component {
         }
     }
 
+    componentDidMount() {
+        getFilmDetailFromApi(this.props.route.params.id).then(data => {
+            this.state = {
+                film: data,
+                isLoading: false
+            }
+        })
+    }
+
     _displayLoading = () => {
         if(this.state.isLoading){
             return(
