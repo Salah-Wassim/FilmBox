@@ -6,7 +6,7 @@ export default class ficheFilm extends React.Component {
         super(props)
         this.state = {
             film: undefined,
-            isLoading: false
+            isLoading: true
         }
     }
 
@@ -24,7 +24,8 @@ export default class ficheFilm extends React.Component {
         console.log(this.props.route.params.id)
         return (
             <View style={styles.main_container}>
-                <Text>Détail du film {this.props.route.params.id}</Text>
+                {this._displayLoading}
+                {this.props.route.params.id}
             </View>
         )
     }
@@ -33,5 +34,14 @@ export default class ficheFilm extends React.Component {
 const styles = StyleSheet.create({
     main_container: {
         flex: 1,
-    }
+    },
+    loading_container: {
+        position:'absolute',
+        left:0,
+        right:0,
+        top:100,
+        bottom:0,
+        alignItems:'center',
+        justifyContent:'center'
+     }
 })
