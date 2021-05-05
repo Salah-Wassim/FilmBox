@@ -1,5 +1,6 @@
 import React from 'react'
 import {StyleSheet, View, ActivityIndicator} from 'react-native'
+import { getFilmDetailFromApi } from '../api/Api'
 
 export default class ficheFilm extends React.Component {
     constructor(props){
@@ -24,7 +25,7 @@ export default class ficheFilm extends React.Component {
         console.log(this.props.route.params.id)
         return (
             <View style={styles.main_container}>
-                {this._displayLoading}
+                {this._displayLoading()}
             </View>
         )
     }
