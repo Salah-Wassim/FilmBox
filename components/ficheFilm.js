@@ -1,6 +1,5 @@
 import React from 'react'
-import {StyleSheet, View, ActivityIndicator} from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
+import {StyleSheet, View, ActivityIndicator, ScrollView} from 'react-native'
 import { getFilmDetailFromApi } from '../api/Api'
 
 export default class ficheFilm extends React.Component {
@@ -34,7 +33,7 @@ export default class ficheFilm extends React.Component {
     _displayFilm() {
         if(this.state.film != undefined){
             return(
-                <ScrollView>
+                <ScrollView style={styles.scrollview_container}>
                     <Text>{this.state.film.title}</Text>
                 </ScrollView>
             )
@@ -42,7 +41,7 @@ export default class ficheFilm extends React.Component {
     }
 
     render(){
-        console.log(this.props.route.params.id)
+        //console.log(this.props.route.params.id)
         return (
             <View style={styles.main_container}>
                 {this._displayLoading()}
@@ -64,5 +63,8 @@ const styles = StyleSheet.create({
         bottom:0,
         alignItems:'center',
         justifyContent:'center'
+     },
+     scrollview_container: {
+         flex: 1,
      }
 })
