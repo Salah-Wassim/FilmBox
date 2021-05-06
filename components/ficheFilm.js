@@ -20,7 +20,7 @@ export default class ficheFilm extends React.Component {
         })
     }
 
-    _displayLoading = () => {
+    _displayLoading(){
         if(this.state.isLoading){
             return(
                 <View style={styles.loading_container}>
@@ -28,6 +28,10 @@ export default class ficheFilm extends React.Component {
                 </View>
             )
         }
+    }
+
+    _displayFilm() {
+        
     }
 
     render(){
