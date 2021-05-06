@@ -79,6 +79,12 @@ export default class signIn extends React.Component {
                         textContentType='password'
                         onChangeText = {UserPassword => this.setState({UserPassword})}
                     />
+                    <View>
+                        <ReCAPTCHA
+                            sitekey="6LddasgaAAAAALmduw6H3arOd44jgkwXlD_apUj9"
+                            onChange={onChange}
+                        />
+                    </View>       
                     <TouchableOpacity>
                         <Text style={styles.fpText}>Forgot Password</Text>
                     </TouchableOpacity>
