@@ -54,7 +54,6 @@ export default class signIn extends React.Component {
     }
 
     render(){
-        const actif = this.props.actif
         return(
             <TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>
                 <LinearGradient colors={['#223', '#222', '#222',]} style={styles.container}>
