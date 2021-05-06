@@ -86,7 +86,7 @@ export default class signIn extends React.Component {
                     </TouchableOpacity>
                     <View style={styles.signUpTextView}>
                         <Text style={styles.signUpText}>Don't have an account ?</Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this._displaySignUp()}>
                             <Text style={[styles.signUpText, {color: '#B53471' }]}> Sign Up</Text>
                         </TouchableOpacity>
                     </View>
