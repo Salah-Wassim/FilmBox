@@ -48,7 +48,9 @@ export default class signIn extends React.Component {
     //    StatusBar.setBarStyle('light-content', true); 
     //}, [])
 
-    
+    _displaySignUp = () => {
+        this.props.navigation.navigate('SignUp')
+    }
 
     render(){
         const actif = this.props.actif
