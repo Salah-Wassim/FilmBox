@@ -54,6 +54,7 @@ export default class signIn extends React.Component {
     }
 
     render(){
+        //const recaptchaRef = React.createRef()
         return(
             <TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>
                 <LinearGradient colors={['#223', '#222', '#222',]} style={styles.container}>
@@ -64,7 +65,7 @@ export default class signIn extends React.Component {
                         placeholderTextColor='#808e9b'
                         style={styles.input}
                         autoCorrect={true}
-                        autoCapitalize={false}
+                        //autoCapitalize={false}
                         autoCompleteType='email'
                         keyboardType='email-address'
                         textContentType='emailAddress'
@@ -77,13 +78,7 @@ export default class signIn extends React.Component {
                         secureTextEntry={true}
                         textContentType='password'
                         onChangeText = {UserPassword => this.setState({UserPassword})}
-                    />
-                    <View>
-                        <ReCAPTCHA
-                            sitekey="6LddasgaAAAAALmduw6H3arOd44jgkwXlD_apUj9"
-                            onChange={onChange}
-                        />
-                    </View>       
+                    />     
                     <TouchableOpacity>
                         <Text style={styles.fpText}>Forgot Password</Text>
                     </TouchableOpacity>
