@@ -18,9 +18,9 @@ export default function App () {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Search'>
-        <Stack.Screen name='Search' component={Search}/>
-        <Stack.Screen name='FicheFilm' component={FicheFilm}/>
+      <Stack.Navigator initialRouteName='SignIn'>
+        <Stack.Screen name='SignIn' component={SignIn}/>
+        <Stack.Screen name='SignUp' component={SignUp}/>
       </Stack.Navigator>
       
     </NavigationContainer>

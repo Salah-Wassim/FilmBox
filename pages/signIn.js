@@ -48,6 +48,8 @@ export default class signIn extends React.Component {
     //    StatusBar.setBarStyle('light-content', true); 
     //}, [])
 
+    
+
     render(){
         const actif = this.props.actif
         return(
