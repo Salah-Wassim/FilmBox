@@ -11,6 +11,7 @@ import {
     TouchableOpacity
 } from 'react-native'
 import {LinearGradient} from 'expo-linear-gradient'
+import ReCAPTCHA from 'react-google-recaptcha'
 //import {icon} from 'react-native-elements'
 
 export default class signIn extends React.Component {
