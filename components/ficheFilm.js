@@ -46,6 +46,7 @@ export default class ficheFilm extends React.Component {
         return (
             <View style={styles.main_container}>
                 {this._displayLoading()}
+                {this._displayFilm()}
             </View>
         )
     }
