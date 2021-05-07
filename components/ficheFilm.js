@@ -12,6 +12,7 @@ export default class ficheFilm extends React.Component {
     }
 
     componentDidMount() {
+        console.log('FilmDetail monté')
         getFilmDetailFromApi(this.props.route.params.id).then(data => {
             this.state = {
                 film: data,
@@ -32,16 +33,18 @@ export default class ficheFilm extends React.Component {
 
     _displayFilm() {
         if(this.state.film != undefined){
+            console.log('test')
             return(
-                <ScrollView style={styles.scrollview_container}>
-                    <Text>{this.state.film.title}</Text>
-                </ScrollView>
+                <View style={styles.scrollview_container}>
+                    <Text>Bonjour</Text>
+                </View>
             )
         }
     }
 
     render(){
         //console.log(this.props.route.params.id)
+        console.log('FilmDetail rendu')
         return (
             <View style={styles.main_container}>
                 {this._displayLoading()}

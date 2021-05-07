@@ -52,7 +52,7 @@ export default class signIn extends React.Component {
     _displaySignUp = () => {
         this.props.navigation.navigate('SignUp')
     }
-
+    
     render(){
         //const recaptchaRef = React.createRef()
         return(
@@ -65,7 +65,7 @@ export default class signIn extends React.Component {
                         placeholderTextColor='#808e9b'
                         style={styles.input}
                         autoCorrect={true}
-                        //autoCapitalize={false}
+                        autoCapitalize='none'
                         autoCompleteType='email'
                         keyboardType='email-address'
                         textContentType='emailAddress'
