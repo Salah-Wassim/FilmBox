@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, StatusBar} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -22,7 +22,6 @@ export default function App () {
         <Stack.Screen name='Search' component={Search}/>
         <Stack.Screen name='FicheFilm' component={FicheFilm}/>
       </Stack.Navigator>
-      
     </NavigationContainer>
   );
 }
