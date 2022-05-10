@@ -49,6 +49,15 @@ export default class signIn extends React.Component {
     //    StatusBar.setBarStyle('light-content', true); 
     //}, [])
 
+    _login = () => {
+        const onEmailChange = (event) => {
+            this.setState({UserEmail})
+        }
+        const onPasswordChange = (event) => {
+            this.setState({UserPassword})
+        }
+    }
+
     _displaySignUp = () => {
         this.props.navigation.navigate('SignUp')
     }
